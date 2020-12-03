@@ -1,0 +1,16 @@
+**/obj/
+**/bin/
+**/packages/
+*.project
+*.orig
+*.suo
+*.user
+*.csproj.user
+*.ide
+**/.vs
+*.nupkg
+*.dll
+*.pdb
+/ServicioMVCEnvios/bin/ServicioMVCEnvios.dll
+/ServicioMVCEnvios/bin/ServicioMVCEnvios.pdb
+/ServicioMVCEnvios/Web.config
