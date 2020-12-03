@@ -90,12 +90,14 @@
     <Content Include="ServicioCliente.svc" />
     <Content Include="ServicioGuia.svc" />
     <Content Include="ServicioSede.svc" />
+    <Content Include="ServicioTrazabilidad.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IServicioCliente.cs" />
     <Compile Include="IServicioGuia.cs" />
     <Compile Include="IServicioSede.cs" />
+    <Compile Include="IServicioTrazabilidad.cs" />
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
     </Compile>
@@ -141,6 +143,9 @@
     </Compile>
     <Compile Include="ServicioSede.svc.cs">
       <DependentUpon>ServicioSede.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServicioTrazabilidad.svc.cs">
+      <DependentUpon>ServicioTrazabilidad.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
