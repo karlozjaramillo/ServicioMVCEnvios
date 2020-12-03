@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +53,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,30 +80,67 @@
     <Content Include="Models\ModelMVCEnvios.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelMVCEnvios.Context.cs</LastGenOutput>
+      <DependentUpon>ModelMVCEnvios.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\ModelMVCEnvios.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMVCEnvios.edmx</DependentUpon>
+      <LastGenOutput>ModelMVCEnvios.cs</LastGenOutput>
+    </Content>
+    <Content Include="ServicioCliente.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServicioCliente.cs" />
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoPaquete.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoSede.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Guia.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Login.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelMVCEnvios.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelMVCEnvios.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMVCEnvios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelMVCEnvios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelMVCEnvios.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sede.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trazabilidad.cs">
+      <DependentUpon>ModelMVCEnvios.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioCliente.svc.cs">
+      <DependentUpon>ServicioCliente.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\ModelMVCEnvios.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelMVCEnvios.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\ModelMVCEnvios.edmx.diagram">
+    <Content Include="Models\ModelMVCEnvios.edmx.diagram">
       <DependentUpon>ModelMVCEnvios.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -112,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
