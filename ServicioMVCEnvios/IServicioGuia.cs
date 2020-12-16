@@ -26,5 +26,8 @@ namespace ServicioMVCEnvios
 
         [OperationContract]
         Guia BuscarGuias(long id);
+
+        //[OperationContract]
+        //List<Guia> Cedula(string cedula);
     }
 }
