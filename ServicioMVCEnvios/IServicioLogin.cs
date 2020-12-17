@@ -14,5 +14,20 @@ namespace ServicioMVCEnvios
     {
         [OperationContract]
         Login Login(string usuario, string password);
+
+        [OperationContract]
+        void AgregarLogin(Login login);
+
+        [OperationContract]
+        List<Login> ListarLogins();
+
+        [OperationContract]
+        void EliminarLogins(long id);
+
+        [OperationContract]
+        void EditarLogins(Login login);
+
+        [OperationContract]
+        Login BuscarLogin(long id);
     }
 }
