@@ -89,6 +89,7 @@
     </Content>
     <Content Include="ServicioCliente.svc" />
     <Content Include="ServicioEstadoPaquete.svc" />
+    <Content Include="ServicioEstadoSede.svc" />
     <Content Include="ServicioGuia.svc" />
     <Content Include="ServicioLogin.svc" />
     <Content Include="ServicioSede.svc" />
@@ -97,6 +98,7 @@
   <ItemGroup>
     <Compile Include="IServicioCliente.cs" />
     <Compile Include="IServicioEstadoPaquete.cs" />
+    <Compile Include="IServicioEstadoSede.cs" />
     <Compile Include="IServicioGuia.cs" />
     <Compile Include="IServicioLogin.cs" />
     <Compile Include="IServicioSede.cs" />
@@ -143,6 +145,9 @@
     </Compile>
     <Compile Include="ServicioEstadoPaquete.svc.cs">
       <DependentUpon>ServicioEstadoPaquete.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServicioEstadoSede.svc.cs">
+      <DependentUpon>ServicioEstadoSede.svc</DependentUpon>
     </Compile>
     <Compile Include="ServicioGuia.svc.cs">
       <DependentUpon>ServicioGuia.svc</DependentUpon>
